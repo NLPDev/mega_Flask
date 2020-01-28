@@ -1,1 +1,0 @@
-FLASK_APP=mega.py
