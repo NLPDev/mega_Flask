@@ -6,7 +6,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
-from flask_babel import Babel
+from flask_babel import Babel, lazy_gettext as _l
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
@@ -23,8 +23,6 @@ bootstrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
 
-from app import routes, models
-
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -39,8 +37,12 @@ def create_app(config_class=Config):
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
+
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
+
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
 
 
     if not app.debug and not app.testing:
@@ -75,4 +77,4 @@ def create_app(config_class=Config):
     def get_locale():
         return request.accept_languages.best_match(app.config['LANGUAGES'])
 
-    
+from app import routes, models    
