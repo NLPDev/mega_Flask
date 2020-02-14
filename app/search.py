@@ -5,7 +5,7 @@ def add_to_index(index, model):
         return
     payload = {}
     for field in model.__search__:
-        payload[field] = getattr(model, field):
+        payload[field] = getattr(model, field)
     current_app.elasticsearch.index(index=index, id=model.id, body=payload)
 
 def remove_from_index(index, model):
@@ -17,7 +17,7 @@ def query_index(index, query, page, per_page):
     if not current_app.elasticsearch:
         return [], 0
     search = current_app.elasticsearch.search(
-        index=index
+        index=index,
         body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
         'from': (page - 1) * per_page, 'size': per_page}
     )

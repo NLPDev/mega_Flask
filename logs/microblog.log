@@ -1,6 +1,33 @@
-2020-02-03 07:38:00,450 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:74]
-2020-02-05 06:35:17,620 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:74]
-2020-02-05 07:06:33,588 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:74]
-2020-02-05 07:09:03,737 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:74]
-2020-02-06 19:02:02,959 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:74]
-2020-02-12 07:17:21,852 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-14 09:46:25,682 ERROR: Exception on /search [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 147, in search
+    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/models.py", line 89, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/search.py", line 22, in query_index
+    'from': (page - 1) * per_page, 'size': per_page}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 1548, in search
+    "GET", _make_path(index, doc_type, "_search"), params=params, body=body
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/transport.py", line 358, in perform_request
+    timeout=timeout,
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 261, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 182, in _raise_error
+    status_code, error_message, additional_info
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
