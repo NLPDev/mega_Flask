@@ -1,4 +1,4 @@
-2020-02-14 09:46:25,682 ERROR: Exception on /search [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
+2020-02-14 11:01:36,940 ERROR: Exception on /search [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -18,7 +18,7 @@ Traceback (most recent call last):
     posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/models.py", line 89, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/search.py", line 22, in query_index
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/search.py", line 24, in query_index
     'from': (page - 1) * per_page, 'size': per_page}
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 84, in _wrapped
     return func(*args, params=params, **kwargs)
@@ -31,3 +31,4 @@ Traceback (most recent call last):
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 182, in _raise_error
     status_code, error_message, additional_info
 elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2020-02-17 06:33:32,430 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]

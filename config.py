@@ -16,6 +16,6 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['lotsun123dev@gmail.com']
-    POSTS_PER_PAGE = 3
+    POSTS_PER_PAGE = 2
     LANGUAGES = ['en', 'es']
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
