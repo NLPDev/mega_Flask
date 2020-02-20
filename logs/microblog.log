@@ -32,3 +32,6 @@ Traceback (most recent call last):
     status_code, error_message, additional_info
 elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
 2020-02-17 06:33:32,430 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-20 03:53:29,968 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-20 04:29:18,333 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-20 04:29:26,604 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
