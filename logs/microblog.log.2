@@ -1,4 +1,4 @@
-2020-02-14 11:01:36,940 ERROR: Exception on /search [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
+2020-02-20 07:11:02,011 ERROR: Exception on /user/test2 [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,29 +14,38 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 147, in search
-    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/models.py", line 89, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/search.py", line 24, in query_index
-    'from': (page - 1) * per_page, 'size': per_page}
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 84, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 1548, in search
-    "GET", _make_path(index, doc_type, "_search"), params=params, body=body
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/transport.py", line 358, in perform_request
-    timeout=timeout,
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 261, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 182, in _raise_error
-    status_code, error_message, additional_info
-elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
-2020-02-17 06:33:32,430 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 03:53:29,968 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 04:29:18,333 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 04:29:26,604 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 06:59:43,693 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 07:01:24,617 ERROR: Exception on /index [POST] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 77, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/base.html", line 64, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/user.html", line 24, in block "app_content"
+    {{ _l('Send private message') }}
+jinja2.exceptions.UndefinedError: '_l' is undefined
+2020-02-20 07:11:10,851 ERROR: Exception on /user/admin [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -52,25 +61,39 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 35, in index
-    db.session.commit()
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
-    self.transaction.commit()
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 510, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/event/attr.py", line 261, in __call__
-    fn(*args, **kw)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/models.py", line 121, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/search.py", line 7, in add_to_index
-    for field in model.__search__:
-AttributeError: 'Post' object has no attribute '__search__'
-2020-02-20 07:05:25,953 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 07:05:33,008 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 07:06:02,659 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
-2020-02-20 07:06:07,903 ERROR: Exception on / [POST] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 77, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/base.html", line 64, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/templates/user.html", line 24, in block "app_content"
+    {{ _l('Send private message') }}
+jinja2.exceptions.UndefinedError: '_l' is undefined
+2020-02-20 07:12:12,465 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-20 07:12:18,541 ERROR: Exception on /send_message/admin [GET] [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -86,19 +109,9 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 35, in index
-    db.session.commit()
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
-    self.transaction.commit()
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 510, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/envf/lib/python3.6/site-packages/sqlalchemy/event/attr.py", line 261, in __call__
-    fn(*args, **kw)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/models.py", line 121, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/search.py", line 7, in add_to_index
-    for field in model.__search__:
-AttributeError: 'Post' object has no attribute '__search__'
-2020-02-20 07:09:02,822 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+  File "/Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/main/routes.py", line 157, in send_message
+    user = User.query.filter_by(username=recipient).filter_or_404()
+AttributeError: 'BaseQuery' object has no attribute 'filter_or_404'
+2020-02-20 07:22:59,013 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-20 07:33:14,510 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
+2020-02-20 09:22:08,088 INFO: Microblog startup [in /Volumes/Work/Flask_test/Flask_Mega_Tutorial/Flask_mega/app/__init__.py:79]
