@@ -17,7 +17,6 @@ def query_index(index, query, page, per_page):
     if not current_app.elasticsearch:
         return [], 0
 
-    print(20, "======", index, query, page, per_page)
     search = current_app.elasticsearch.search(
         index=index,
         body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
